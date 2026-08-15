@@ -67,14 +67,12 @@ app.put("/api/applications/:id", (req, res) => {
   res.json(updated);
 });
 
-// DELETE /api/applications/:id
 app.delete("/api/applications/:id", (req, res) => {
   const result = db.prepare("DELETE FROM applications WHERE id = ?").run(req.params.id);
   if (result.changes === 0) return res.status(404).json({ error: "Not found" });
   res.status(204).send();
 });
 
-// GET /api/stats — quick summary numbers
 app.get("/api/stats", (req, res) => {
   const total = db.prepare("SELECT COUNT(*) as c FROM applications").get().c;
   const active = db.prepare("SELECT COUNT(*) as c FROM applications WHERE status != 'Rejected'").get().c;
