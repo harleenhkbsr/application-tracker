@@ -9,20 +9,17 @@ app.use(express.json());
 
 const VALID_STATUSES = ["Applied", "Screening", "Interview", "Offer", "Rejected"];
 
-// GET /api/applications — list all, newest first
 app.get("/api/applications", (req, res) => {
   const rows = db.prepare("SELECT * FROM applications ORDER BY dateApplied DESC, createdAt DESC").all();
   res.json(rows);
 });
 
-// GET /api/applications/:id — single record
 app.get("/api/applications/:id", (req, res) => {
   const row = db.prepare("SELECT * FROM applications WHERE id = ?").get(req.params.id);
   if (!row) return res.status(404).json({ error: "Not found" });
   res.json(row);
 });
 
-// POST /api/applications — create
 app.post("/api/applications", (req, res) => {
   const { company, role, status = "Applied", dateApplied = "", link = "", notes = "" } = req.body;
 
@@ -43,7 +40,6 @@ app.post("/api/applications", (req, res) => {
   res.status(201).json(created);
 });
 
-// PUT /api/applications/:id — update
 app.put("/api/applications/:id", (req, res) => {
   const existing = db.prepare("SELECT * FROM applications WHERE id = ?").get(req.params.id);
   if (!existing) return res.status(404).json({ error: "Not found" });
