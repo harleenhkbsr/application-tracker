@@ -7,9 +7,9 @@ const STAGES = ["Applied", "Screening", "Interview", "Offer", "Rejected"];
 const STAGE_COLOR = {
   Applied: "#8A8577",
   Screening: "#C08A3E",
-  Interview: "#2F6F76",
-  Offer: "#3F7A52",
-  Rejected: "#A6483B",
+  Interview: "#2197a4",
+  Offer: "#1e793b",
+  Rejected: "#ff4830",
 };
 
 const STAGE_ORDER = ["Applied", "Screening", "Interview", "Offer"];
@@ -31,7 +31,7 @@ function StagePipeline({ status }) {
               height: 6,
               flex: 1,
               borderRadius: 2,
-              background: filled ? STAGE_COLOR[s] : "#D8D2C2",
+              background: filled ? STAGE_COLOR[s] : "#D8D2C2", //ones for filler don't change
               opacity: rejected ? 0.4 : 1,
             }}
           />
@@ -40,7 +40,7 @@ function StagePipeline({ status }) {
       {rejected && (
         <span
           className="ml-1 text-[10px] tracking-wide font-semibold px-1.5 py-0.5 rounded"
-          style={{ color: STAGE_COLOR.Rejected, background: "#A6483B22" }}
+          style={{ color: STAGE_COLOR.Rejected, background: "#683b352d" }}//bg of closed box
         >
           CLOSED
         </span>
