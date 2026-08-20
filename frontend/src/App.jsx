@@ -31,7 +31,7 @@ function StagePipeline({ status }) {
               height: 6,
               flex: 1,
               borderRadius: 2,
-              background: filled ? STAGE_COLOR[s] : "#D8D2C2", //ones for filler don't change
+              background: filled ? STAGE_COLOR[s] : "#D8D2C2", /*ones for filler don't change*/
               opacity: rejected ? 0.4 : 1,
             }}
           />
@@ -40,7 +40,7 @@ function StagePipeline({ status }) {
       {rejected && (
         <span
           className="ml-1 text-[10px] tracking-wide font-semibold px-1.5 py-0.5 rounded"
-          style={{ color: STAGE_COLOR.Rejected, background: "#683b352d" }}//bg of closed box
+          style={{ color: STAGE_COLOR.Rejected, background: "#683b352d" }}/*bg of closed box*/
         >
           CLOSED
         </span>
@@ -127,9 +127,9 @@ export default function App() {
       setError(e.message);
     }
   }
-
+/*background colour + default text shade*/
   return (
-    <div className="min-h-screen w-full" style={{ background: "#E7E2D3", color: "#1E2A28" }}>
+    <div className="min-h-screen w-full" style={{ background: "#000000", color: "#8A8577" }}>
       <div className="max-w-5xl mx-auto px-5 py-10">
         <div className="flex items-end justify-between mb-8 flex-wrap gap-4">
           <div>
