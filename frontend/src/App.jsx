@@ -187,7 +187,7 @@ export default function App() {
             className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white"
             style={{ background: "#1E2A28" }}
           >
-            <Plus size={16} /> Add application//add application part
+            <Plus size={16} /> Add application
           </button>
         </div>
 
