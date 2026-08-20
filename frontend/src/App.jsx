@@ -127,7 +127,7 @@ export default function App() {
       setError(e.message);
     }
   }
-/*background colour + default text shade*/
+/*background colour + default text*/
   return (
     <div className="min-h-screen w-full" style={{ background: "#000000", color: "#8A8577" }}>
       <div className="max-w-5xl mx-auto px-5 py-10">
@@ -161,12 +161,12 @@ export default function App() {
         <div className="flex items-center gap-3 mb-6 flex-wrap">
           <div
             className="flex items-center gap-2 px-3 py-2 flex-1 min-w-[200px]"
-            style={{ background: "#F5F2E9", border: "1px solid #D8D2C2" }}
+            style={{ background: "#040303", border: "3px solid #8A8577" }}/*search bar*/
           >
             <Search size={16} style={{ color: "#8A8577" }} />
             <input
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => setQuery(e.target.value)}/*search symbol*/
               placeholder="Search company or role"
               className="bg-transparent w-full text-sm outline-none"
             />
@@ -175,7 +175,7 @@ export default function App() {
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
             className="px-3 py-2 text-sm ff-mono"
-            style={{ background: "#F5F2E9", border: "1px solid #D8D2C2" }}
+            style={{ background: "#050505", border: "3px solid #8A8577" }}/*sorting box*/
           >
             <option>All</option>
             {STAGES.map((s) => (
