@@ -175,7 +175,7 @@ export default function App() {
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
             className="px-3 py-2 text-sm ff-mono"
-            style={{ background: "#050505", border: "3px solid #8A8577" }}/*sorting box*/
+            style={{ background: "#000000", border: "3px solid #8A8577" }}/*sorting box*/
           >
             <option>All</option>
             {STAGES.map((s) => (
@@ -185,7 +185,7 @@ export default function App() {
           <button
             onClick={openAdd}
             className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white"
-            style={{ background: "#1E2A28" }}
+            style={{ background: "#000000", border: "3px solid #8A8577" }}
           >
             <Plus size={16} /> Add application
           </button>
